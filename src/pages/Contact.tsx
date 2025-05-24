@@ -1,6 +1,6 @@
 
 import Layout from "@/components/Layout";
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Factory, Globe } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,51 +10,51 @@ import { Label } from "@/components/ui/label";
 const Contact = () => {
   const contactMethods = [
     {
+      icon: Phone,
+      title: "Phone",
+      details: "+91-9822117160",
+      description: "Direct line to our sales team",
+      availability: "Mon-Sat, 9AM-6PM IST"
+    },
+    {
       icon: Mail,
-      title: "Email Support",
-      details: "support@fibronavigator.com",
-      description: "Get personalized support via email",
+      title: "Email",
+      details: "navfibro@gmail.com",
+      description: "Technical inquiries and quotes",
       availability: "Response within 24 hours"
     },
     {
-      icon: Phone,
-      title: "Phone Support",
-      details: "+1 (555) 123-4567",
-      description: "Speak with our support team",
-      availability: "Mon-Fri, 9AM-5PM EST"
+      icon: Factory,
+      title: "Manufacturing",
+      details: "Optical Telecom & Defense",
+      description: "Custom manufacturing solutions",
+      availability: "Project-based timelines"
     },
     {
-      icon: MessageCircle,
-      title: "Live Chat",
-      details: "Available on website",
-      description: "Instant support when you need it",
-      availability: "Mon-Fri, 9AM-8PM EST"
-    },
-    {
-      icon: MapPin,
-      title: "Mailing Address",
-      details: "123 Health St, Wellness City, WC 12345",
-      description: "Send us mail or documents",
-      availability: "Business hours"
+      icon: Globe,
+      title: "Global Shipping",
+      details: "Worldwide Delivery",
+      description: "International shipping available",
+      availability: "Quote on request"
     }
   ];
 
   const faqs = [
     {
-      question: "How can I get started with Fibro Navigator?",
-      answer: "Simply explore our articles and resources sections. All content is free and accessible immediately. For personalized support, reach out via any of our contact methods."
+      question: "What products does Nav Fibro Plastics manufacture?",
+      answer: "We specialize in optical telecom and defense products including fiber optic connectors, optical modules, precision plastic components, and custom defense-grade optical solutions."
     },
     {
-      question: "Do you provide medical advice?",
-      answer: "We provide educational information and support, but we don't offer medical advice. Always consult with your healthcare provider for medical decisions."
+      question: "Do you provide custom manufacturing services?",
+      answer: "Yes, we offer custom manufacturing solutions tailored to specific client requirements for both telecom and defense applications. Contact us with your specifications for a detailed quote."
     },
     {
-      question: "Is there a cost to use your resources?",
-      answer: "All our articles, guides, and basic resources are completely free. We believe everyone should have access to quality fibromyalgia information and support."
+      question: "What quality standards do you follow?",
+      answer: "We maintain ISO certification and follow strict quality control processes. Our products meet international standards and are tested for defense-grade applications."
     },
     {
-      question: "How can I contribute to the community?",
-      answer: "We welcome community contributions! You can share your story, provide feedback on resources, or volunteer to help others in our community forums."
+      question: "What is your typical lead time for orders?",
+      answer: "Lead times vary based on product complexity and order volume. Standard products typically ship within 2-4 weeks, while custom solutions may require 6-12 weeks. Contact us for specific timelines."
     }
   ];
 
@@ -65,14 +65,14 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Get in 
-              <span className="bg-gradient-to-r from-teal-600 to-blue-700 bg-clip-text text-transparent">
-                {" "}Touch
+              Contact
+              <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">
+                {" "}Nav Fibro Plastics
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're here to support you on your fibromyalgia journey. Reach out with 
-              questions, suggestions, or just to connect with our caring team.
+              Get in touch with our expert team for optical telecom and defense product solutions. 
+              We're here to support your manufacturing needs.
             </p>
           </div>
         </div>
@@ -86,11 +86,11 @@ const Contact = () => {
             {contactMethods.map((method, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm text-center">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full flex items-center justify-center mb-4">
+                  <div className="mx-auto w-16 h-16 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center mb-4">
                     <method.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-lg text-gray-900">{method.title}</CardTitle>
-                  <div className="text-teal-600 font-semibold">{method.details}</div>
+                  <div className="text-red-600 font-semibold">{method.details}</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-2">{method.description}</p>
@@ -110,10 +110,10 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Request a Quote</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Have a specific question or need personalized support? Fill out the form 
-                and we'll get back to you as soon as possible.
+                Need custom optical components or have specific requirements? Fill out the form 
+                and our technical team will get back to you with a detailed quote.
               </p>
               
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
@@ -121,37 +121,42 @@ const Contact = () => {
                   <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="Enter your first name" />
+                        <Label htmlFor="companyName">Company Name</Label>
+                        <Input id="companyName" placeholder="Enter your company name" />
                       </div>
                       <div>
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Enter your last name" />
+                        <Label htmlFor="contactPerson">Contact Person</Label>
+                        <Input id="contactPerson" placeholder="Your name" />
                       </div>
                     </div>
                     
                     <div>
                       <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" placeholder="Enter your email" />
+                      <Input id="email" type="email" placeholder="your.email@company.com" />
                     </div>
                     
                     <div>
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" placeholder="What is this regarding?" />
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input id="phone" type="tel" placeholder="+91-XXXXXXXXXX" />
                     </div>
                     
                     <div>
-                      <Label htmlFor="message">Message</Label>
+                      <Label htmlFor="productType">Product Type</Label>
+                      <Input id="productType" placeholder="e.g., Fiber Optic Connectors, Defense Modules" />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="requirements">Detailed Requirements</Label>
                       <Textarea 
-                        id="message" 
-                        placeholder="Tell us how we can help you..." 
+                        id="requirements" 
+                        placeholder="Describe your technical specifications, quantities, timeline, and any special requirements..." 
                         rows={6}
                       />
                     </div>
                     
-                    <Button className="w-full bg-gradient-to-r from-teal-600 to-blue-700 hover:from-teal-700 hover:to-blue-800" size="lg">
+                    <Button className="w-full bg-gradient-to-r from-red-600 to-blue-700 hover:from-red-700 hover:to-blue-800" size="lg">
                       <Send className="mr-2 h-5 w-5" />
-                      Send Message
+                      Submit Quote Request
                     </Button>
                   </form>
                 </CardContent>
@@ -161,7 +166,7 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Quick answers to common questions about our platform and services.
+                Common questions about our manufacturing capabilities and products.
               </p>
               
               <div className="space-y-6">
@@ -181,13 +186,13 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Support Hours */}
+      {/* Company Info */}
       <section className="py-16 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Support Hours</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Business Hours</h2>
             <p className="text-lg text-gray-600">
-              We're here when you need us most. Here are our current support hours:
+              Our manufacturing facility and customer service team are available during these hours:
             </p>
           </div>
           
@@ -196,25 +201,25 @@ const Contact = () => {
               <CardContent className="p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="text-center">
-                    <h3 className="font-semibold text-gray-900 mb-2">Live Support</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">Manufacturing</h3>
                     <div className="space-y-1 text-gray-600">
-                      <p>Monday - Friday</p>
-                      <p>9:00 AM - 8:00 PM EST</p>
+                      <p>Monday - Saturday</p>
+                      <p>9:00 AM - 6:00 PM IST</p>
                     </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="font-semibold text-gray-900 mb-2">Email Support</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">Customer Service</h3>
                     <div className="space-y-1 text-gray-600">
-                      <p>24/7 Availability</p>
-                      <p>Response within 24 hours</p>
+                      <p>Monday - Friday</p>
+                      <p>9:00 AM - 6:00 PM IST</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="mt-6 p-4 bg-teal-50 rounded-lg text-center">
-                  <p className="text-sm text-teal-800">
-                    <strong>Emergency Support:</strong> For crisis situations, please contact emergency services 
-                    or use the emergency resources listed on our Resources page.
+                <div className="mt-6 p-4 bg-red-50 rounded-lg text-center">
+                  <p className="text-sm text-red-800">
+                    <strong>Express Support:</strong> For urgent technical support or emergency orders, 
+                    call +91-9822117160 and mention "URGENT" to reach our on-call engineer.
                   </p>
                 </div>
               </CardContent>
@@ -224,18 +229,25 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-teal-600 to-blue-700">
+      <section className="py-20 bg-gradient-to-r from-red-600 to-blue-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
-            We're Here for You
+            Partner with Industry Leaders
           </h2>
-          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
-            Remember, you're not alone in this journey. Our team and community 
-            are here to support you every step of the way.
+          <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
+            Join our network of satisfied clients in defense and telecommunications. 
+            Experience the Nav Fibro Plastics difference in quality and service.
           </p>
-          <Button variant="secondary" size="lg">
-            Join Our Community
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="secondary" size="lg">
+              <Phone className="mr-2 h-5 w-5" />
+              Call Now: +91-9822117160
+            </Button>
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-red-600">
+              <Mail className="mr-2 h-5 w-5" />
+              Email Us
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>
